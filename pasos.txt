@@ -15,9 +15,15 @@ git commit -m "envio 001"
 //Enviar a git
 git push -u origin main
 
+Actualizar repositorio
+git pull origin main
+
 //Para instalar cv2
 pip install opencv-python opencv-python-headless
 
 //Para instalar libreria pandas que exporta a excel
 pip install pandas
 pip install openpyxl
+
+//Instalamos el módulo serial para comunicarse con el Arduino
+pip install pyserial
