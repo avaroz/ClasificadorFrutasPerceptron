@@ -1,16 +1,25 @@
+#include <ESP32Servo.h>
+
+
+Servo servo;
+int pinServo = 2;
+char dato;
+
 void setup() {
-  pinMode(13, OUTPUT); // Configurar el pin 13 como salida
-  Serial.begin(9600); // Iniciar la comunicación serie a 9600 baudios
+
+  servo.attach(pinServo, 500, 2500);
+  Serial.begin(9600);
 }
 
 void loop() {
-  if (Serial.available() > 0) { // Si hay datos disponibles en el puerto serie
-    char c = Serial.read(); // Leer el caracter recibido
-    if (c == '1') { // Si el caracter es '1'
-      digitalWrite(13, HIGH); // Encender el LED 13
-    }
-    else if (c == '0') { // Si el caracter es '0'
-      digitalWrite(13, LOW); // Apagar el LED 13
+  if (Serial.available() > 0) {
+    dato = Serial.read();
+    if (dato == '1') {  
+      servo.write(90);
+      Serial.println("Moviendo a 90 grados");
+    } else if (dato == '2') { 
+      servo.write(180);
+      Serial.println("Moviendo a 180 grados");
     }
   }
 }

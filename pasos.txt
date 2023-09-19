@@ -27,3 +27,9 @@ pip install openpyxl
 
 //Instalamos el módulo serial para comunicarse con el Arduino
 pip install pyserial
+
+//instalamos la libreria para mostrar graficos
+pip install matplotlib
+
+//Instalamos la libreria para procesar imagenes
+pip install imutils
